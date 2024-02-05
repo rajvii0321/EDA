@@ -1,0 +1,17 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df=pd.read_csv('cars.csv')
+df
+
+x=df['mpg']
+y=df['weight']
+
+# using matplotlib
+plt.scatter(x=x,y=y, label="MPG vs WEIGHT")
+plt.xlabel("MPG")
+plt.ylabel("WEIGHT")
+plt.grid(1)
+plt.legend()
+plt.show()
