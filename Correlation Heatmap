@@ -1,0 +1,30 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+cars = sns.load_dataset('mpg')
+cars
+
+cars.groupby('origin').cylinders.value_counts()
+
+origin_cyli = (cars
+                 .groupby('origin')
+                 .cylinders
+                 .value_counts()
+                 .unstack()
+                 .fillna(0)
+                )
+
+sns.heatmap(origin_cyli, 
+            cmap='PiYG',
+            annot=True, 
+            fmt=".0f",
+            annot_kws={
+                'fontsize':16,
+                'fontweight':'bold',
+                'fontfamily':'serif'
+            }
+           )
+
+#For correlation 
+#sns.heatmap(cars.corr())
