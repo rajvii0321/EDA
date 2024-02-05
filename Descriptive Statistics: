@@ -1,0 +1,12 @@
+import pandas as pd
+
+df=pd.read_csv('ibm.csv')
+df
+
+mean=df.MonthlyIncome.mean()
+median =df.MonthlyIncome.median()
+std=df.MonthlyIncome.std()
+
+print("Mean = ", mean)
+print("Median = ", median)
+print("Standard Deviation = ",std)
