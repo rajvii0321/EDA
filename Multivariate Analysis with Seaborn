@@ -1,0 +1,24 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+cars=sns.load_dataset('mpg')
+
+
+x=cars['mpg']
+y=cars['weight']
+z=cars['origin']
+
+sns.scatterplot(x=x,
+                y=y,
+                data=cars,
+                hue=z,
+                size=z,
+                sizes=[10,50,100]
+               )
+plt.xlabel("MPG")
+plt.ylabel("WEIGHT")
+plt.title("MPG vs WEIGHT")
+plt.grid(1)
+plt.legend()
+plt.show()
